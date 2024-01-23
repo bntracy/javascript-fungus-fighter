@@ -20,13 +20,14 @@ function onReady() {
 
     renderAP();
     renderHP();
+    setInterval(regen, 1000);
 }
 
 
 onReady()
 
 function attack(apLost, hpLost) {
-  console.log('button clicked');
+  // console.log('button clicked');
   userAP -= apLost;
   if (userAP < 0) {
     userAP = 0;
@@ -69,4 +70,12 @@ function fungusWins() {
     document.querySelector('.entangle').disabled = true;
     document.querySelector('.dragon-blade').disabled = true;
     document.querySelector('.star-fire').disabled = true;
+}
+
+function regen() {
+    // console.log('in regen');
+    if (fungusHP < 50) {
+        fungusHP++;
+        renderHP();
+    }
 }
