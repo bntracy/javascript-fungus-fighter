@@ -46,10 +46,12 @@ function attack(apLost, hpLost) {
 
 function renderAP() {
     document.querySelector('.ap-text').innerHTML = userAP + ' AP';
+    document.getElementById('ap-meter').value = userAP;
 }
 
 function renderHP() {
     document.querySelector('.hp-text').innerHTML = fungusHP + ' HP';
+    document.getElementById('hp-meter').value = fungusHP;
 }
 
 function userWins() {
